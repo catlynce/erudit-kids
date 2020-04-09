@@ -10,7 +10,7 @@ The parents will be able to register their kids and the resources they use for t
     - [ ] Resources
     - [ ] Users (parents, kids, admin)
 - [ ] Install devise and pundit
-- [ ] Create the controllers
+- [ ] Create controllers
 - [ ] Create routes
-- [ ] Install tailwind CSS
+- [ ] Install Tailwind CSS
 - [ ] Use Vue JS
