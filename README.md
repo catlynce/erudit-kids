@@ -6,7 +6,7 @@ The parents will be able to register their kids and the resources they use for t
 ## TODO
 
 - [ ] Setup DB structure
-    [ ] Create migrations
+  - [ ] Create migrations
   - [ ] Create models
     - [ ] Resources
     - [ ] Users (parents, kids, admin)
