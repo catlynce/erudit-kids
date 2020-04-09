@@ -6,7 +6,8 @@ The parents will be able to register their kids and the resources they use for t
 ## TODO
 
 - [ ] Setup DB structure
-  - [ ] Think about the models needed
+    [ ] Create migrations
+  - [ ] Create models
     - [ ] Resources
     - [ ] Users (parents, kids, admin)
 - [ ] Install devise and pundit
