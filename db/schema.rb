@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_04_10_054528) do
     t.boolean "parent", default: true
     t.boolean "child", default: false
     t.boolean "admin", default: false
-    t.string "email", default: "", null: false
+    t.string "email", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

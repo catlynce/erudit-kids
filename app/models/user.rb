@@ -6,4 +6,12 @@ class User < ApplicationRecord
 
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true
+
+  before_validation :set_username
+
+  private
+
+  def set_username
+    self.username = self.email if self.username.blank?
+  end
 end
