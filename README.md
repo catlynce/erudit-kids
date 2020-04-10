@@ -10,7 +10,8 @@ The parents will be able to register their kids and the resources they use for t
   - [ ] Create models
     - [ ] Resources
     - [ ] Users (parents, kids, admin)
-- [ ] Install devise and pundit
+- [x] Install devise
+- [ ] Install pundit
 - [ ] Create controllers
 - [ ] Create routes
 - [ ] Install Tailwind CSS
