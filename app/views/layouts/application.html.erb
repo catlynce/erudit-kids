@@ -13,10 +13,12 @@
 
     <%= render "layouts/shared/nav" %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
-    <%= yield %>
+    <div class="container mx-auto my-5">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
 
   </body>
 </html>
