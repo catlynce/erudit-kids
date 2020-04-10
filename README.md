@@ -9,7 +9,7 @@ The parents will be able to register their kids and the resources they use for t
   - [ ] Create migrations
   - [ ] Create models
     - [ ] Resources
-    - [ ] Users (parents, kids, admin)
+    - [x] Users (parents, kids, admin)
 - [x] Install devise
 - [ ] Install pundit
 - [ ] Create controllers
