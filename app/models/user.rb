@@ -9,6 +9,9 @@ class User < ApplicationRecord
 
   before_validation :set_username
 
+  has_many :kids, dependent: :destroy
+  has_many :resources, dependent: :destroy
+
   private
 
   def set_username

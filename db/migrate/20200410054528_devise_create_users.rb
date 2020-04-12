@@ -6,8 +6,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :username, null: false
       t.string :firstname, null: true
       t.string :lastname, null: true
-      t.boolean :parent, default: 1
-      t.boolean :child, default: 0
       t.boolean :admin, default: 0
 
       ## Database authenticatable

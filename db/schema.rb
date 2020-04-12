@@ -10,14 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_10_054528) do
+ActiveRecord::Schema.define(version: 2020_04_12_035917) do
+
+  create_table "kids", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "username", default: "", null: false
+    t.string "email"
+    t.date "birthdate", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_kids_on_user_id"
+  end
+
+  create_table "resources", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "url", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_resources_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "firstname"
     t.string "lastname"
-    t.boolean "parent", default: true
-    t.boolean "child", default: false
     t.boolean "admin", default: false
     t.string "email", null: false
     t.string "encrypted_password", default: "", null: false
@@ -39,4 +57,6 @@ ActiveRecord::Schema.define(version: 2020_04_10_054528) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "kids", "users"
+  add_foreign_key "resources", "users"
 end
