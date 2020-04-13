@@ -1,5 +1,6 @@
 <template>
-  <div class="mt-4">
+  <div class="mt-4 relative">
+    <span class="absolute right-0 top-0" @click="remove">Delete</span>
     <form action="">
       <div>
         <input type="text" name="name" :value="info.name" />
@@ -20,9 +21,14 @@
 <script>
 export default {
   props: ["info"],
+  data() {
+    return {
+      kidInfo: "testing"
+    };
+  },
   methods: {
-    testing: () => {
-      console.log("testing");
+    remove() {
+      console.log("the kid id is %s", this.info.id);
     }
   }
 };
