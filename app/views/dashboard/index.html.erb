@@ -5,13 +5,14 @@
 
 <div class="container mx-auto flex">
     <div class="w-1/2">
-        <ul class="mt-5">
+
+        <%= link_to "Add Kid", new_kid_path, class: 'px-3 py-1 w-64 rounded border bg-white' %>
+
+        <div class="mt-5">
             <% current_user.kids.each do |k| %>
-                <li>
-                    <%= link_to k.name, "#", class: 'underline text-blue-600' %>
-                </li>
+                <kid :info="<%= k.to_json %>"></kid>
             <% end %>
-        </ul>
+        </div>
     </div>
     <div class="w-1/2">
         <h3>Your resources list</h3>

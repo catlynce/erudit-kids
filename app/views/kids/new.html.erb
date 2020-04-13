@@ -1,0 +1,21 @@
+<%= form_for @kid do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true %>
+    </div>
+    <div>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+    </div>
+    <div>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+    </div>
+    <div>
+        <%= f.label :birthdate %>
+        <%= f.text_field :birthdate %>
+    </div>
+    <div>
+        <%= f.submit "Submit", disable_with: 'Submiting...' %>
+    </div>
+<% end %>
