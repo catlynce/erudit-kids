@@ -13,6 +13,15 @@ class KidsController < ApplicationController
         end
     end
 
+    def destroy
+        @kid = Kid.find(params[:id])
+        if @kid.destroy
+            render json: { msg: 'Kid was successfully deleted.', status: :ok }
+        else
+            render json: { msg: @kid.errors, status: :unprocessable_entity }
+        end
+    end
+
     private
 
     def kids_params

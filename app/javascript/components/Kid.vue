@@ -19,16 +19,19 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   props: ["info"],
   data() {
-    return {
-      kidInfo: "testing"
-    };
+    return {};
   },
   methods: {
     remove() {
       console.log("the kid id is %s", this.info.id);
+      axios.delete(`/kids/${this.info.id}`).then(data => {
+        console.log(data);
+      });
     }
   }
 };
