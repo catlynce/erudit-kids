@@ -8,11 +8,19 @@ The parents will be able to register their kids and the resources they use for t
 - [ ] Setup DB structure
   - [ ] Create migrations
   - [ ] Create models
-    - [ ] Resources
-    - [x] Users (parents, kids, admin)
-- [x] Install devise
-- [ ] Install pundit
+    - [x] Users (parents, admin)
+    - [x] Kids
+    - [x] Resources
 - [ ] Create controllers
+  - [ ] pages
+  - [ ] dashboard
+  - [ ] kids
 - [ ] Create routes
+  - [x] to dashboard
+  - [x] add kid
+  - [ ] edit kid
+  - [ ] remove kid
 - [x] Install Tailwind CSS
-- [ ] Use Vue JS
+- [x] Use Vue JS
+- [ ] Install pundit
+- [x] Install devise
