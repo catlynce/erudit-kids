@@ -9,8 +9,10 @@ class User < ApplicationRecord
 
   before_validation :set_username
 
-  has_many :kids, dependent: :destroy
-  has_many :resources, dependent: :destroy
+  belongs_to :account
+  has_many :kids, class_name: 'Kid', foreign_key: 'account_id'
+  # has_many :kids, through: :account, dependent: :destroy
+  # has_many :resources, dependent: :destroy
 
   private
 

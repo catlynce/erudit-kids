@@ -10,17 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_12_035917) do
+ActiveRecord::Schema.define(version: 2020_04_15_161311) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "uid", null: false
+    t.integer "plan_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plan_id"], name: "index_accounts_on_plan_id"
+  end
 
   create_table "kids", force: :cascade do |t|
     t.string "name", null: false
     t.string "username", default: "", null: false
     t.string "email"
     t.date "birthdate", null: false
-    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_kids_on_user_id"
+    t.integer "account_id"
+    t.index ["account_id"], name: "index_kids_on_account_id"
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "resources", force: :cascade do |t|
@@ -52,11 +66,15 @@ ActiveRecord::Schema.define(version: 2020_04_12_035917) do
     t.datetime "confirmation_sent_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "account_id"
+    t.index ["account_id"], name: "index_users_on_account_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "kids", "users"
+  add_foreign_key "accounts", "plans"
+  add_foreign_key "kids", "accounts"
   add_foreign_key "resources", "users"
+  add_foreign_key "users", "accounts"
 end
