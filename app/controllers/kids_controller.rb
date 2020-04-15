@@ -1,4 +1,9 @@
 class KidsController < ApplicationController
+
+    def index
+        render json: current_user.kids.as_json
+    end
+
     def new
         @kid = Kid.new
     end
@@ -11,6 +16,11 @@ class KidsController < ApplicationController
         else
             render new
         end
+    end
+
+    def update
+        @kid = Kid.find(params[:id])
+        @kid.update kids_params
     end
 
     def destroy

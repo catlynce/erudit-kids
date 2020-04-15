@@ -4,14 +4,14 @@
 
 
 <div class="container mx-auto flex">
-    <div class="w-1/2">
+    <div class="w-1/2 mr-24">
 
         <%= link_to "Add Kid", new_kid_path, class: 'px-3 py-1 w-64 rounded border bg-white' %>
 
         <div class="mt-5">
-            <% current_user.kids.each do |k| %>
-                <kid :info="<%= k.to_json %>"></kid>
-            <% end %>
+            <h5>List of kids</h5>
+            <hr>
+            <kids>something here</kids>
         </div>
     </div>
     <div class="w-1/2">

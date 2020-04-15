@@ -1,18 +1,18 @@
 <template>
   <div class="mt-4 relative">
-    <span class="absolute right-0 top-0" @click="remove">Delete</span>
-    <form action="">
+    <button class="absolute right-0 top-0" @click="remove">Delete</button>
+    <form>
       <div>
-        <input type="text" name="name" :value="info.name" />
+        <input type="text" name="name" v-model="kid.name" @keyup="update" />
       </div>
       <div>
-        <input type="text" name="username" :value="info.username" />
+        <input type="text" name="username" v-model="kid.username" @keyup="update" />
       </div>
       <div>
-        <input type="text" name="email" :value="info.email" />
+        <input type="text" name="email" v-model="kid.email" @keyup="update" />
       </div>
       <div>
-        <input type="date" name="birthdate" :value="info.birthdate" />
+        <input type="date" name="birthdate" v-model="kid.birthdate" />
       </div>
     </form>
   </div>
@@ -22,15 +22,24 @@
 import axios from "axios";
 
 export default {
-  props: ["info"],
+  props: ["kid"],
   data() {
     return {};
   },
   methods: {
+    update() {
+      console.log(this.kid);
+      axios
+        .patch(`/kids/${this.kid.id}`, {
+          ...this.kid
+        })
+        .then(res => {
+          console.log(res.data);
+        });
+    },
     remove() {
-      console.log("the kid id is %s", this.info.id);
-      axios.delete(`/kids/${this.info.id}`).then(data => {
-        console.log(data);
+      axios.delete(`/kids/${this.kid.id}`).then(data => {
+        this.$emit("destroyedKid");
       });
     }
   }
