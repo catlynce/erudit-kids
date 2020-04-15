@@ -17,7 +17,7 @@ import kid from "./Kid";
 export default {
   data() {
     return {
-      kidsList: null
+      kidsList: null,
     };
   },
   mounted: function() {
@@ -25,10 +25,10 @@ export default {
   },
   methods: {
     getKidsList() {
-      axios.get("/kids").then(res => {
+      axios.get("/kids").then((res) => {
         this.kidsList = res.data;
       });
-    }
-  }
+    },
+  },
 };
 </script>
