@@ -20,15 +20,19 @@ class KidsController < ApplicationController
 
     def update
         @kid = Kid.find(params[:id])
-        @kid.update kids_params
+        if @kid.update kids_params
+            render json: { msg: 'Kid was successfully updated.', code: 200, status: :ok }
+        else
+            render json: { msg: @kid.errors, code: 500, status: :unprocessable_entity }
+        end
     end
 
     def destroy
         @kid = Kid.find(params[:id])
         if @kid.destroy
-            render json: { msg: 'Kid was successfully deleted.', status: :ok }
+            render json: { msg: 'Kid was successfully deleted.', code: 200, status: :ok }
         else
-            render json: { msg: @kid.errors, status: :unprocessable_entity }
+            render json: { msg: @kid.errors, code: 500, status: :unprocessable_entity }
         end
     end
 
