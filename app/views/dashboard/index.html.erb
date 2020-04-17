@@ -3,17 +3,7 @@
 <p>If you have any question or doubt, please get in contact here.</p>
 
 
-<div class="container mx-auto flex">
-    <div class="w-1/2 mr-24">
-
-        <%= link_to "Add Kid", new_kid_path, class: 'px-3 py-1 w-64 rounded border bg-white' %>
-
-        <div class="mt-5">
-            <h5>List of kids</h5>
-            <hr>
-            <kid-list></kid-list>
-        </div>
-    </div>
+<div class="container mx-auto mt-5 flex">
     <div class="w-1/2">
         <h3>Resources list</h3>
 
@@ -24,6 +14,17 @@
                 </li>
             <% end %>
         </ul>
+    </div>
+
+    <div class="w-1/2 mr-24">
+
+        <%= link_to "Add Kid", new_kid_path, class: 'px-3 py-1 w-64 rounded border bg-white' %>
+
+        <div class="mt-5">
+            <h5>List of kids</h5>
+            <hr>
+            <kid-list></kid-list>
+        </div>
     </div>
 </div>
 
