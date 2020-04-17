@@ -15,10 +15,10 @@
         </div>
     </div>
     <div class="w-1/2">
-        <h3>Your resources list</h3>
+        <h3>Resources list</h3>
 
         <ul>
-            <% current_user.resources.each do |r| %>
+            <% @resources.each do |r| %>
                 <li>
                     <%= link_to r.name, r.url, target: '_blank', class: 'text-blue-500 underline', title: 'Click to open in new tab' %>
                 </li>
