@@ -10,7 +10,7 @@ class KidsController < ApplicationController
 
     def create
         @kid = Kid.new kids_params
-        @kid.user = current_user
+        @kid.account = current_user.account
         if @kid.save
             redirect_to dashboard_path
         else
