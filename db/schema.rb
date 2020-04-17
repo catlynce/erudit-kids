@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_16_234940) do
+ActiveRecord::Schema.define(version: 2020_04_17_005106) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "uid", null: false
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 2020_04_16_234940) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["plan_id"], name: "index_accounts_on_plan_id"
+  end
+
+  create_table "kid_resources", force: :cascade do |t|
+    t.integer "kid_id", null: false
+    t.integer "resource_id", null: false
+    t.string "config"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["kid_id"], name: "index_kid_resources_on_kid_id"
+    t.index ["resource_id"], name: "index_kid_resources_on_resource_id"
   end
 
   create_table "kids", force: :cascade do |t|
@@ -72,6 +82,8 @@ ActiveRecord::Schema.define(version: 2020_04_16_234940) do
   end
 
   add_foreign_key "accounts", "plans"
+  add_foreign_key "kid_resources", "kids"
+  add_foreign_key "kid_resources", "resources"
   add_foreign_key "kids", "accounts"
   add_foreign_key "users", "accounts"
 end

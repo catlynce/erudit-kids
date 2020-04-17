@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kid: one
+  resource: one
+  config: MyString
+
+two:
+  kid: two
+  resource: two
+  config: MyString
