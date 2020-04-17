@@ -1,0 +1,7 @@
+<%= link_to "Add Resource", new_resource_path, class: 'py-2 px-3 bg-blue-300 border-blue-800 border rounded' %>
+
+<div class="mt-4">
+    <% @resources.each do |r| %>
+        <div><%= r.name %> | <%= r.url %></div>
+    <% end %>
+</div>

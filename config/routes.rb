@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'dashboard#index'
   resources 'kids'
+  resources 'resources'
 
   root 'dashboard#index'
   # root 'pages#home'
