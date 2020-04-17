@@ -11,6 +11,7 @@ class ResourcesController < ApplicationController
     def create
         @resource = Resource.new resource_params
         if @resource.save
+            @resource.image.attach(params[:resource][:image])
             redirect_to dashboard_path
         else
             render new
@@ -20,6 +21,6 @@ class ResourcesController < ApplicationController
     private
 
     def resource_params
-        params.require(:resource).permit(:name, :url)
+        params.require(:resource).permit(:name, :url, :image)
     end
 end
