@@ -22,14 +22,14 @@ import TurbolinksAdapter from "vue-turbolinks";
 Vue.use(TurbolinksAdapter);
 
 import App from "../app.vue";
-import Kids from "../components/Kids.vue";
-import Kid from "../components/Kid.vue";
+import KidList from "../components/KidList.vue";
 Vue.component("app", App);
-Vue.component("kids", Kids);
-Vue.component("kid", Kid);
 
 document.addEventListener("turbolinks:load", () => {
     const app = new Vue({
-        el: "#root"
+        el: "#root",
+        components: {
+            'kid-list': KidList
+        }
     });
 });
