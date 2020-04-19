@@ -4,18 +4,24 @@
 
 
 <div class="container mx-auto mt-5 flex">
-    <div class="w-1/2">
+    <div class="w-full">
+        <resource-list :items="<%= @resources.map(&:attributes).to_json %>"></resource-list>
         <h3>Resources list</h3>
 
-        <ul>
-            <% @resources.each do |r| %>
-                <li>
-                    <%= link_to r.name, r.url, target: '_blank', class: 'text-blue-500 underline', title: 'Click to open in new tab' %>
-                </li>
-            <% end %>
-        </ul>
+            <div class="grid grid-cols-4 gap-2">
+                <% @resources.each do |r| %>
+                    <div style="background-image: url(<%= cl_image_path(r.image_url) if r.image %>);" class="card resource relative w-100 h-full rounded border border-gray-300">
+                        <div class="absolute bottom-0 p-4 w-full bg-gray-700 rounded-b text-center">
+                            <%= link_to r.name, r.url, target: '_blank', class: 'text-white uppercase', title: 'Click to open in new tab' %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
     </div>
 
+</div>
+
+<div class="container mx-auto mt-5 flex">
     <div class="w-1/2 mr-24">
 
         <%= link_to "Add Kid", new_kid_path, class: 'px-3 py-1 w-64 rounded border bg-white' %>
@@ -27,4 +33,3 @@
         </div>
     </div>
 </div>
-

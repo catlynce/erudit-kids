@@ -22,6 +22,7 @@ import TurbolinksAdapter from "vue-turbolinks";
 Vue.use(TurbolinksAdapter);
 
 import App from "../app.vue";
+import ResourceList from "../components/ResourceList.vue";
 import KidList from "../components/KidList.vue";
 Vue.component("app", App);
 
@@ -29,6 +30,7 @@ document.addEventListener("turbolinks:load", () => {
     const app = new Vue({
         el: "#root",
         components: {
+            'resource-list': ResourceList,
             'kid-list': KidList
         }
     });

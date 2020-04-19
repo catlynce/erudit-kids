@@ -9,9 +9,8 @@ class ResourcesController < ApplicationController
     end
 
     def create
-        @resource = Resource.new resource_params
+        @resource = Resource.create resource_params
         if @resource.save
-            @resource.image.attach(params[:resource][:image])
             redirect_to dashboard_path
         else
             render new
