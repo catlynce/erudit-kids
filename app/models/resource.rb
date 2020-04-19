@@ -1,5 +1,4 @@
 class Resource < ApplicationRecord
-    # has_one_attached :image
     include ImageUploader::Attachment(:image)
 
     attribute :resource_image_url
