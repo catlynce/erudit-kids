@@ -4,10 +4,8 @@
     <div v-for="(item, index) in items" :index="index" :key="item.id">
       <div>{{ item.name }}</div>
       <div>{{ item.url }}</div>
-      <div>{{ item.image_data }}</div>
       <img :src="item.resource_image_url" alt />
     </div>
-    {{items}}
   </div>
 </template>
 
@@ -22,5 +20,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
