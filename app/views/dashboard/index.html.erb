@@ -1,4 +1,9 @@
-<div>Account : <%= @account.uid %></div>
+<div>
+    Account : <%= @account.uid %>
+    <div>
+        <%= link_to "Share account", share_new_path, title: 'Share your account with another tutor (dad, mom, grand parent, professor)' %>
+    </div>
+</div>
 <p>&nbsp;</p>
 
 <h1>This is your dashboard</h1>
