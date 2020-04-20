@@ -3,5 +3,6 @@ class DashboardController < ApplicationController
 
   def index
     @resources = Resource.all
+    @account = current_user.account
   end
 end
