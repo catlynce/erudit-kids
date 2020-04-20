@@ -1,0 +1,8 @@
+<h1>Share account</h1>
+<%= form_for @share do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <div class="group">
+        <%= f.submit "Invite", disable_with: 'Sending...' %>
+    </div>
+<% end %>

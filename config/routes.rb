@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'dashboard', to: 'dashboard#index'
-  get 'share/new', to: 'share#new'
+
+  # resources 'share', only: ['index', 'new', 'create']
+  resources 'shares', only: ['index', 'new', 'create']
 
   resources 'kids'
   resources 'resources'

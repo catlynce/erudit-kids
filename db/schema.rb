@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_17_174002) do
+ActiveRecord::Schema.define(version: 2020_04_20_060749) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "uid", null: false
@@ -55,6 +55,16 @@ ActiveRecord::Schema.define(version: 2020_04_17_174002) do
     t.text "image_data"
   end
 
+  create_table "shares", force: :cascade do |t|
+    t.string "email", null: false
+    t.integer "user_id", null: false
+    t.integer "account_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_shares_on_account_id"
+    t.index ["user_id"], name: "index_shares_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "firstname"
@@ -86,5 +96,7 @@ ActiveRecord::Schema.define(version: 2020_04_17_174002) do
   add_foreign_key "kid_resources", "kids"
   add_foreign_key "kid_resources", "resources"
   add_foreign_key "kids", "accounts"
+  add_foreign_key "shares", "accounts"
+  add_foreign_key "shares", "users"
   add_foreign_key "users", "accounts"
 end
