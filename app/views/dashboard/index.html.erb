@@ -6,17 +6,6 @@
 <div class="container mx-auto mt-5 flex">
     <div class="w-full">
         <resource-list :items="<%= @resources.map(&:attributes).to_json %>"></resource-list>
-        <h3>Resources list</h3>
-
-            <div class="grid grid-cols-4 gap-2">
-                <% @resources.each do |r| %>
-                    <div style="background-image: url(<%= cl_image_path(r.image_url) if r.image %>);" class="card resource relative w-100 h-full rounded border border-gray-300">
-                        <div class="absolute bottom-0 p-4 w-full bg-gray-700 rounded-b text-center">
-                            <%= link_to r.name, r.url, target: '_blank', class: 'text-white uppercase', title: 'Click to open in new tab' %>
-                        </div>
-                    </div>
-                <% end %>
-            </div>
     </div>
 
 </div>
