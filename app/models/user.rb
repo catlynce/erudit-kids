@@ -28,8 +28,8 @@ class User < ApplicationRecord
       part1 = Time.now.strftime('%Y%m%d')
       part2 = ('a'..'z').to_a.shuffle[0,4].join.upcase
       part3 = User.maximum(:id).next.to_s.rjust(6,'0')
-      account = Account.create uid: "#{part1}-#{part2}-#{part1}", plan: Plan.first
-      self.account_id = account
+      account = Account.create! uid: "#{part1}-#{part2}-#{part3}", plan: Plan.first
+      self.account_id = account.id
     end
   end
 end
