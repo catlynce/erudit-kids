@@ -1,7 +1,6 @@
-<h1>Your shares</h1>
-
-<div>
-    <% @shares.each do |share| %>
+    <h1>Your shares</h1>
+    <div>
+      <% @shares.each do |share| %>
         <p><%= share.email %> | <%= share.created_at %></p>
-    <% end %>
-</div>
+      <% end %>
+    </div>
