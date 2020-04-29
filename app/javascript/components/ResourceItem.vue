@@ -18,7 +18,16 @@
 
 <script>
 export default {
-  props: ["resource"]
+  props: ["resource"],
+  data() {
+    return {
+      kidResources: null
+    };
+  },
+  mounted: () => {
+    console.log("testing");
+  },
+  methods: {}
 };
 </script>
 
