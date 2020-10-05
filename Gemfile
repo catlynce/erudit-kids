@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'cloudinary'
-gem 'shrine', '~> 3.2'
+gem 'shrine', '~> 3.3'
 gem "shrine-cloudinary", "~> 1.1"
 
 group :development, :test do
